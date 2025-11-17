@@ -16,6 +16,10 @@ void playChicken();
 bool checkPermanentBan(const string &filename);
 void writePermanentBan(const string &filename);
 
+void playCow();
+bool checkPermanentBan(const string &filename);
+void writePermanentBan(const string &filename);
+
 int main() {
     srand((unsigned)time(0));
 
@@ -143,12 +147,12 @@ int main() {
                 system("cls");
                 playChicken();
 
-                char again;
-                cout << "\nReturn to main menu? (Y/N): ";
-                cin >> again;
+                char exit;
+                cout << "\nReturn to main menu [R] or Quit entire game [Q] ?: ";
+                cin >> exit;
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                if (again == 'N' || again == 'n') {
-                    cout << "\nThanks for playing! Goodbye, Farmer " << playerName << "!\n";
+                if (exit == 'Q' || exit == 'q') {
+                cout << "\nGoodbye, Farmer " << playerName << "! Thanks for Playing Farm Animal Simulator <3\n";
                     Sleep(1200);
                     return 0;
                 }
@@ -160,12 +164,12 @@ int main() {
                 system("cls");
                 playCow();
 
-                char again;
-                cout << "\nReturn to main menu? (Y/N): ";
-                cin >> again;
+                char exit;
+                cout << "\nReturn to main menu [R] or Quit entire game [Q] ?: ";
+                cin >> exit;
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                if (again == 'N' || again == 'n') {
-                    cout << "\nThanks for playing! Goodbye, Farmer " << playerName << "!\n";
+                if (exit == 'Q' || exit == 'q') {
+                cout << "\nGoodbye, Farmer " << playerName << "! Thanks for Playing Farm Animal Simulator <3\n";
                     Sleep(1200);
                     return 0;
                 }
@@ -177,7 +181,6 @@ int main() {
                 system("cls");
                 cout << "Tamaraw game not implemented yet. Coming soon!\n";
                 Sleep(1200);
-                // After placeholder, ask whether to return to menu
                 break;
             }
 
@@ -197,7 +200,7 @@ int main() {
     return 0;
 }
 
-//Banner
+//Ban
 bool checkPermanentBan(const string &filename) {
     ifstream fin(filename.c_str());
     if (!fin.is_open()) return false;
@@ -225,6 +228,8 @@ void playChicken() {
     bool used[30] = {false};
 
     cout << "==================== Farm Animal Simulator - CHICKEN ====================\n\n";
+    cout << "Press X to quit game.\n\n";
+
     Sleep(800);
 
     for (int i = 0; i < 15; i++) {
@@ -243,6 +248,11 @@ void playChicken() {
             cout << "Give it: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health-=5;
             else health+=0;
@@ -253,6 +263,11 @@ void playChicken() {
             cout << "Give it: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health-=10;
             else if(ans=='B') health-=5;
             else health+=10;
@@ -263,6 +278,11 @@ void playChicken() {
             cout << "What will you use?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health-=10;
             else health+=0;
@@ -273,6 +293,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=0;
             else if(ans=='B') health-=5;
             else health+=0;
@@ -283,6 +308,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=5;
             else if(ans=='B') health-=5;
             else health+=0;
@@ -293,6 +323,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=0;
             else if(ans=='B') health+=10;
             else health-=5;
@@ -303,6 +338,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=0;
             else if(ans=='B') health-=5;
             else health+=5;
@@ -313,6 +353,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health-=5;
             else if(ans=='B') health+=0;
             else health+=10;
@@ -323,6 +368,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -333,6 +383,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -343,6 +398,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=0;
             else if(ans=='B') health+=10;
             else health-=5;
@@ -353,6 +413,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -363,6 +428,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -373,6 +443,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health-=5;
             else if(ans=='B') health+=0;
             else health+=10;
@@ -383,6 +458,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -393,6 +473,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -403,6 +488,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health-=5;
             else if(ans=='B') health+=0;
             else health+=10;
@@ -413,6 +503,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -423,6 +518,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=0;
             else if(ans=='B') health+=10;
             else health-=5;
@@ -433,6 +533,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -443,6 +548,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -453,6 +563,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -463,6 +578,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -473,6 +593,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -483,6 +608,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -493,6 +623,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -503,6 +638,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -513,6 +653,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -523,6 +668,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -533,6 +683,11 @@ void playChicken() {
             cout << "What will you do?: ";
             cin >> ans; ans = toupper(ans);
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
             if(ans=='A') health+=10;
             else if(ans=='B') health+=0;
             else health-=5;
@@ -555,5 +710,497 @@ void playChicken() {
     if (health >= 80) cout << "Your chicken is VERY HEALTHY! Great job!\n";
     else if (health >= 50) cout << "Your chicken is okay, but could be better.\n";
     else cout << "Your chicken is weak. Try again.\n";
+
+}
+
+//Cow Game
+void playCow() {
+    const string saveFile = "save.txt";
+    int health = 50;
+    bool used[30] = {false};
+
+    cout << "==================== Farm Animal Simulator - COW ====================\n\n";
+    cout << "Press X to quit game.\n\n";
+
+    Sleep(800);
+
+    for (int i = 0; i < 15; i++) {
+        int scenario;
+        do {
+            scenario = rand() % 30;
+        } while (used[scenario]);
+        used[scenario] = true;
+
+        char ans;
+        cout << "\nScenario " << (i + 1) << ":\n";
+
+        if (scenario == 0) {
+            cout << "You saw a rare, endangered, and super poisonous snake moving towards your cow!\n";
+            cout << "A. Kill the snake\nB. Spare the snake and sacrifice the cow\nC. Panic and call 911\n";
+            cout << "What will you do?!: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=0;
+            else if(ans=='B') health-=100;
+            else health+=0;
+        }
+        else if (scenario == 1) {
+            cout << "Your cow is very hungry.\n";
+            cout << "A. Cat food\nB. Blue grass\nC. Hay\n";
+            cout << "What will you feed it?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=10;
+            else if(ans=='B') health+=5;
+            else health+=3;
+        }
+        else if (scenario == 2) {
+            cout << "Your cow is dirty. Time to take a bath.\n";
+            cout << "A. Head & Shoulders Shampoo\nB. Perla\nC. Dog shampoo\n";
+            cout << "What will you use?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=10;
+            else if(ans=='B') health-=5;
+            else health+=5;
+        }
+        else if (scenario == 3) {
+            cout << "It's time to clean your cow's hoof\n";
+            cout << "A. Watch Nate the Hoof Guy's tiktok and follow it\nB. Ask ChatGPT how to do it\nC. Search a video on how to do it in YouTube\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=7;
+            else if(ans=='B') health+=2;
+            else health+=5;
+        }
+        else if (scenario == 4) {
+            cout << "Your cow keeps staring at a bush near the fence.\n";
+            cout << "A. Ask ChatGPT why\nB. Let it stare at the bush\nC. Hurry the cow inside the barn\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=0;
+            else if(ans=='B') health-=5;
+            else health+=0;
+        }
+        else if (scenario == 5) {
+            cout << "It's time to milk your cow today\n";
+            cout << "A. Just one\nB. Three times\nC. Five times\n";
+            cout << "How many times will yu milk it?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=2;
+            else if(ans=='B') health+=10;
+            else health-=5;
+        }
+        else if (scenario == 6) {
+            cout << "Your cow’s nose looks dry and cracked.\n";
+            cout << "A. Apply petroleum jelly\nB. Give it more water\nC. Play Goat Simulator instead\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=0;
+            else if(ans=='B') health+=5;
+            else health-=5;
+        }
+        else if (scenario == 7) {
+            cout << "Your cow is in heat.\n";
+            cout << "A. Play WAP by Cardi B\nB. Find another cow for it\nC. Hire Chicago Bull's Bull\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=5;
+            else if(ans=='B') health-=10;
+            else health+=10;
+        }
+        else if (scenario == 8) {
+            cout << "The cow keeps mooing loudly for no reason.\n";
+            cout << "A. Check if it's the first of the month then do a dance\nB. Be clingy and give it hugs\nC. Moo with it\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=0;
+            else if(ans=='B') health+=10;
+            else health-=5;
+        }
+        else if (scenario == 9) {
+            cout << "Your cow keeps following you everywhere\n";
+            cout << "A. Slap its ass\nB. Ignore it\nC. Scold it\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=0;
+            else if(ans=='B') health+=5;
+            else health-=5;
+        }
+        else if (scenario == 10) {
+            cout << "You saw a swollen spot on your cow's leg\n";
+            cout << "A. Poke it to see its reaction\nB. Apply cold compress\nC. Make it walk on a treadmill\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=10;
+            else if(ans=='B') health-=5;
+            else health-=5;
+        }
+        else if (scenario == 11) {
+            cout << "It's raining outside and your cow is alone in the field.\n";
+            cout << "A. Tie it under a tree\nB. Make it wear a raincoat\nC. Scream at it tell it to head inside the barn\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=5;
+            else if(ans=='B') health+=10;
+            else health+=0;
+        }
+        else if (scenario == 12) { //This where i stop, goodnight
+            cout << "The barn is full of manure.\n";
+            cout << "A. Hire John Marston to clean it\nB. Clean it yourself\nC. Let your cow eat and clean the manure\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=15;
+            else if(ans=='B') health+=5;
+            else health-=15;
+        }
+        else if (scenario == 13) {
+            cout << "Your cow's milk is light yellow.\n";
+            cout << "A. Nothing\nB. Keep milking it\nC. Take it to the Albularyo\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=10;
+            else if(ans=='B') health+5;
+            else health-=5;
+        }
+        else if (scenario == 14) {
+            cout << "Your cow wants to eat avocados.\n";
+            cout << "A. Feed only one\nB. Say no\nC. Give it 10 avocados\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=5;
+            else if(ans=='B') health+=5;
+            else health-=20;
+        }
+        else if (scenario == 15) {
+            cout << "Your cow's poop is very green!\n";
+            cout << "A. Praise and give it pats\nB. Panic and rush it to the vet\nC. Do nothing and make Iced Capuccino instead\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=7;
+            else if(ans=='B') health-=5;
+            else health+=5;
+        }
+        else if (scenario == 16) {
+            cout << "Your cow is lying down on the ground stiffly and not moving!\n";
+            cout << "A. Do nothing\nB. Play with it\nC. Play 'Last Christmas' by Wham!\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=5;
+            else if(ans=='B') health-=5;
+            else health+=0;
+        }
+        else if (scenario == 17) {
+            cout << "Your cow is following you everywhere.\n";
+            cout << "A. Run away from it\nB. Watch mukbang videos together\nC. Grill a brisket in front of it\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=4;
+            else if(ans=='B') health+=5;
+            else health+=0;
+        }
+        else if (scenario == 18) {
+            cout << "Your cow stole and ate some apples.\n";
+            cout << "A. Give it a lecture\nB. Hit it\nC. Steal the apples back\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=2;
+            else if(ans=='B') health-=10;
+            else health+=0;
+        }
+        else if (scenario == 19) {
+            cout << "Your cow sneezes.\n";
+            cout << "A. Check if sick\nB. Make it sneeze again\nC. Ignore\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=10;
+            else if(ans=='B') health+=0;
+            else health-=5;
+        }
+        else if (scenario == 20) {
+            cout << "Your cow wants to play.\n";
+            cout << "A. Play Soccer with it\nB. Play pickleball, but the cow is your net\nC. Play Valorant with your cow\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=8;
+            else if(ans=='B') health-=5;
+            else health+=0;
+        }
+        else if (scenario == 21) {
+            cout << "It's time to bring your cow for a regular check up but it's favorite band's ticket sale.\n";
+            cout << "A. Hire someone from facebook\nB. Ask your friend to bring your cow to the vet\nC. Let your cow go on its own\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=3;
+            else if(ans=='B') health+=1;
+            else health-=6;
+        }
+        else if (scenario == 22) {
+            cout << "It is super hot today.\n";
+            cout << "A. Give your cow a cold bath\nB. Add ice in your cow's water trough \nC. Give it Ice Cream\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=5;
+            else if(ans=='B') health+=5;
+            else health-=5;
+        }
+        else if (scenario == 23) {
+            cout << "Your cow's head got stuck between the steel fence!\n";
+            cout << "A. Call 911\nB. Break your fence\nC. Use sheer force to free your cow\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=0;
+            else if(ans=='B') health+=2;
+            else health-=5;
+        }
+        else if (scenario == 24) {
+            cout << "Your partner is jealous of your cow because you're giving it more attention.\n";
+            cout << "A. Scold your partner be more clingy to your cow\nB. Spend more time with the cow\nC. Scold the cow for making your girlfriend jealous\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=15;
+            else if(ans=='B') health+=5;
+            else health-=5;
+        }
+        else if (scenario == 25) {
+            cout << "Your cow drinks from the fish pond.\n";
+            cout << "A. Yell and scare it away\nB. Let it drink\nC. Do nothing\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=8;
+            else if(ans=='B') health-=5;
+            else health-=3;
+        }
+        else if (scenario == 26) {
+            cout << "Today is your me day but your cow stepped on a bee.\n";
+            cout << "A. Check on your cow\nB. Do nothing\nC. Find the dead bee\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=4;
+            else if(ans=='B') health-=7;
+            else health+=0;
+        }
+        else if (scenario == 27) {
+            cout << "Your cow suddenly stucked its head into the mud.\n";
+            cout << "A. Let it do what it wants and doomscroll in TikTok\nB. Pull it away from the mud puddle\nC. Push your head into the mud too\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=6;
+            else if(ans=='B') health-=3;
+            else health+=0;
+        }
+        else if (scenario == 28) {
+            cout << "Your cow is not moving.\n";
+            cout << "A. Drag it and make it walk around\nB. Le it be\nC. Stare at it\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health-=4;
+            else if(ans=='B') health+=5;
+            else health+=0;
+        }
+        else if (scenario == 29) {
+            cout << "Your cow doesn't want to go back in the barn yet.\n";
+            cout << "A. Let it outside durin the night\nB. Yell and force it inside the barn\nC. Ask your partner to bring the cow inside the barn\n";
+            cout << "What will you do?: ";
+            cin >> ans; ans = toupper(ans);
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (ans == 'X' || ans == 'x') {
+                cout << "\nGame stopped...\n";
+                Sleep(1000);
+                return;
+            }
+            if(ans=='A') health+=-12;
+            else if(ans=='B') health+=10;
+            else health+=0;
+        }
+
+        cout << "\nCurrent Health: " << health << "\n";
+        cout << "\n------------------------\n\n";
+        Sleep(700);
+
+        if (health <= 0) {
+            cout << "Your cow has died. Game Over. YOU CAN'T PLAY THE GAME AGAIN!!!\n";
+            writePermanentBan(saveFile);
+            Sleep(1200);
+            exit(0);
+        }
+    }
+
+    cout << "\nHealth at end: " << health << "\n";
+    cout << "\n==================== GAME END ====================\n";
+    if (health >= 80) cout << "Your cow is VERY HEALTHY! Great job!\n";
+    else if (health >= 50) cout << "Your cow is okay, but could be better.\n";
+    else cout << "Your cow is weak. Try again.\n";
 
 }
