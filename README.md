@@ -10,9 +10,12 @@ Currently developing the game’s main body, animal selection, and finding parts
 - Smooth text animation and loading sequence (i think)
 - Animal selection and randomized events
 - Chicken Game
+- Cow Game
 - Permament Ban (if animal dies)
 - Ban lift feature (for dev only)
-- Next: Cow & Tamaraw game
+- Quit game while playing
+- Return to menu feature while playing
+- Next: Tamaraw game
 
 ## Developer
 AJ Abendanio  
